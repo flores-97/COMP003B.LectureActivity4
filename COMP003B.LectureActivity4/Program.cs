@@ -1,3 +1,5 @@
+using COMP003B.LectureActivity4.Middleware;
+
 namespace COMP003B.LectureActivity4
 {
     public class Program
@@ -20,7 +22,10 @@ namespace COMP003B.LectureActivity4
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
+
+            app.UseMiddleware<RequestLoggingMiddleware>();
 
             app.UseRouting();
 
